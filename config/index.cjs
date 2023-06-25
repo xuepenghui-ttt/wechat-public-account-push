@@ -20,9 +20,9 @@ const USER_CONFIG = {
       // 想要发送的人的名字
       name: '贝贝仙女',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: 'oGDwU6YFF8xt2RCPx1oVI-4f328s',
+      id: 'oGDwU6XrulV9-WYknFIb_T8J3f28',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'CmF9rUnCKSU6TcUSdlkaxfTSIu0X9BQORGCEnVtlauY',
+      useTemplateId: 'FSMna9wEXwxiqlwB_JozWMVTC9IYu3hmI-F8KizZ0HQ',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '02-18',
     },
