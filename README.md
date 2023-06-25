@@ -29,6 +29,16 @@ wechat-public-account-push
 
 [>>> 点这里获取更新公告✨](https://github.com/wangxinleo/wechat-public-account-push/discussions/categories/announcements)
 
+<h3 style="color: red;">重要通知：</h3>
+
+**微信团队于2023-05-04日晚12点下线【自定义颜色】、【emoji表情符号】、【自定义换行】、【尾部/备注字段】。**
+
+**【微信测试号】的推送服务已受到影响，原有的推送模板需要用户自行修改，详见 [如何修复因2023-05-04微信推送服务规范整改，导致推送服务异常](https://github.com/wangxinleo/wechat-public-account-push/issues/326)**
+
+**使用服务号推送不受影响**
+
+---
+
 详细功能如下：
 
 - **支持多个收件人设置成不同的测试号模板，专属定制更贴心**
@@ -104,7 +114,7 @@ wechat-public-account-push
 ![图片无法查看请移步顶部访问 国内备用仓库地址](img/how-to-use/run-img.jpg)
 
 ![图片无法查看请移步顶部访问 国内备用仓库地址](img/how-to-use/run-img-2.jpg)
-
+### 新手教学[⭐点击开始学习](./docs/novice-teaching/novice.md)
 ## 1. 如何使用
 
 wechat-public-account-push 实现自消息推送的原理，是通过调用一系列开放的api实现的, 所以也非常适合初学者学习。
@@ -125,6 +135,21 @@ wechat-public-account-push 实现自消息推送的原理，是通过调用一�
 
 
 **其他通道**
+
+> 免费版每个接收用户每天允许推送200条消息，付费版每个接收用户每天1000条
+> 
+> 1分钟内接收5次请求，超出的请求将不再推送。另外对于相同的内容，1小时内限制发送3条。
+>
+> 消息推送时显示的是 **设备通知**，标题需要**进入公众号查看**
+>
+> 消息放置在消息列表，方便随时查看
+>
+> 不再是xxxx测试号，而是推送加服务号，更美观
+>
+> 此通道[可能会被腾讯弃用](https://developers.weixin.qq.com/community/minihome/doc/000a46c7eb8468ba1a1cc863e51401)，请评估风险后再选择
+>
+
+[⭐pushplus推送加服务号 >>> 点击使用](./docs/message-channel/push-plus.md)
 
 > 免费版每个接收用户每天允许推送5条消息，付费版每个接收用户每天1000条
 >
@@ -171,6 +196,8 @@ wechat-public-account-push 实现自消息推送的原理，是通过调用一�
 [✨配置自动生成 传送门 >>>](https://shuangxunian.github.io/wechat-form/)
 
 [❓配置自动生成 教程 >>>](https://github.com/shuangxunian/wechat-form)
+
+[❓配置完成后如何手动运行或者更改自动运行时间? 点开链接查看4. 5. >>>](./docs/how-to-use/github-actions.md)
 
 #### 1.2.2 方式二：使用Github-Action(不准时，排队执行，胜在免费)
 > 世界上最大的同性交友平台(不是)，需要一定的英语基础，**编辑的时候请不要使用网页的自动翻译**
@@ -263,12 +290,32 @@ wechat-public-account-push 实现自消息推送的原理，是通过调用一�
 
 **计时类**
 
-| 参数                    | 详细                        | 示例                                                            |
-|-----------------------|---------------------------|---------------------------------------------------------------|
-| ~~love_day.DATA~~     | 已预置, 但是可以删掉, 在配置中自定义, 见下文 | 2674                                                          |
-| ~~marry_day.DATA~~    | 已预置, 但是可以删掉, 在配置中自定义, 见下文 | 965                                                           |
-| birthday_message.DATA | 生日消息和节日消息                 | 距离 宝贝 的生日还有122天，距离 中秋节还有30天                                   |
-| course_schedule.DATA  | 每日的课表                     | 08:00-09:35 高等数学<br/> 09:35-10:35 大学语文 <br/> 10:35-11:35 大学英语 |
+| 参数                                    | 详细                        | 示例                                                            |
+|---------------------------------------|---------------------------|---------------------------------------------------------------|
+| ~~love_day.DATA~~                     | 已预置, 但是可以删掉, 在配置中自定义, 见下文 | 2674                                                          |
+| ~~marry_day.DATA~~                    | 已预置, 但是可以删掉, 在配置中自定义, 见下文 | 965                                                           |
+| birthday_message.DATA (**微信测试号无法使用**) | 生日消息和节日消息                 | 距离 宝贝 的生日还有122天，距离 中秋节还有30天                                   |
+| course_schedule.DATA (**微信测试号无法使用**)  | 每日的课表                     | 08:00-09:35 高等数学<br/> 09:35-10:35 大学语文 <br/> 10:35-11:35 大学英语 |
+
+
+`{index}`替换为要显示的第N-1个
+
+> 用法示例：
+>
+> 距离第1近的生日消息和节日消息请填写
+>
+> **wx_birthday_0.DATA** -> 距离 宝贝 的生日还有122天
+>
+> 第2节课请填写
+>
+> **wx_course_schedule_1.DATA** -> 08:00-09:35 高等数学
+>
+> (请确保在配置文件中设置了正确的天数）
+
+| 参数                              | 详细                      | 示例                |
+|---------------------------------|-------------------------|-------------------|
+| wx_birthday_{index}.DATA        | 距离第{index-1}近的生日消息和节日消息 | 距离 宝贝 的生日还有122天   |
+| wx_course_schedule_{index}.DATA | 	第{index-1}节课           | 	08:00-09:35 高等数学 |
 
 **天行简单API**
 
@@ -500,6 +547,8 @@ PR 来纠正我，一样都算是对开源做贡献了。
 
 @shuangxunian ShuangxuNian
 
+@只会前端的小废物
+
 感谢那些默默支持我, 鼓励我继续更新这个小玩具的朋友。
 
 感谢所有参与到开发/测试中的朋友们，是大家的帮助让 TA 越来越好！ (*´▽｀)ノノ
@@ -516,7 +565,19 @@ PR 来纠正我，一样都算是对开源做贡献了。
 
 <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=y0plwm9zhOI35EwlOdRh372g4KWbqMSt&jump_from=webapi"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="wechat-public-account-push 交流群" title="wechat-public-account-push 交流群"></a>
 
-## 12. 其他
+## 12. 运行
+
+注意，在官方文档中有这么一段：
+
+```
+To prevent unnecessary workflow runs, scheduled workflows may be disabled automatically. When a public repository is forked, scheduled workflows are disabled by default. In a public repository, scheduled workflows are automatically disabled when no repository activity has occurred in 60 days.
+```
+
+也就是说，定时执行的任务需要每隔 60 天激活一次。
+
+使用 “import repository” 功能重新导入自己已经fork过的仓库，选为私有后，就不会出现这种情况了。
+
+## 13. 其他
 
 时区查询: [https://www.zeitverschiebung.net/cn/all-time-zones.html](https://www.zeitverschiebung.net/cn/all-time-zones.html)
 
