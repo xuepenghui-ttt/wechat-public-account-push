@@ -19,27 +19,13 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: '小田宝贝',
+      name: '贝贝仙女',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: 'oGDwU6aPAAOzmtkuB3DyZgRnrd-o',
+      id: 'oGDwU6YFF8xt2RCPx1oVI-4f328s',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'cGGmr3S7HZTZkYZHkXVnO3hSXR7ADcmGJ-_xh90QAcQ',
+      useTemplateId: '-Ctk_NSOxA8w__7hh6UCcxbRsJrPEBHoIKaZcbOL7F0',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
-      horoscopeDate: '04-09',
-      festivals: [
-        // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
-        {
-          type: '*生日', name: '宝贝', year: '1999', date: '02-23',
-        },
-        {
-          type: '节日', name: '初遇纪念日', year: '2015', date: '09-01',
-        },
-      ],
-      // 我们在一起已经有xxxx天了的配置
-      customizedDateList: [
-        // 在一起的日子
-        { keyword: 'love_day', date: '2019-02-16' },
-      ],
+      horoscopeDate: '02-18',
     },
   ],
 
