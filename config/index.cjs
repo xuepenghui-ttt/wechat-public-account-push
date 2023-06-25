@@ -15,7 +15,6 @@ const USER_CONFIG = {
 
   PROVINCE: '山西',
   CITY: '吕梁',
-
   USERS: [
     {
       // 想要发送的人的名字
