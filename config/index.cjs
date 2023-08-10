@@ -25,6 +25,11 @@ const USER_CONFIG = {
       useTemplateId: 'XmXcMd-dDYtlkKk5CWXZN0EFx8_1v9luOkYnIX_jG-s',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
       horoscopeDate: '04-19',
+      horoscopeDateType: '明日',
+      customizedDateList: [
+        // 在一起的日子
+        { keyword: 'love_day', date: '2019-02-17' },
+      ],
     },
   ],
 
