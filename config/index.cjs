@@ -18,13 +18,13 @@ const USER_CONFIG = {
   USERS: [
     {
       // 想要发送的人的名字
-      name: '贝贝仙女',
+      name: 'Dear taotao babay!',
       // 使用微信测试号：扫码关注你的微信测试号后生成的一段字符串，在测试号后台能看到
-      id: 'oGDwU6XrulV9-WYknFIb_T8J3f28',
+      id: 'oGDwU6aPAAOzmtkuB3DyZgRnrd-o',
       // 使用微信测试号：你想对他发送的模板消息的模板ID
-      useTemplateId: 'FSMna9wEXwxiqlwB_JozWMVTC9IYu3hmI-F8KizZ0HQ',
+      useTemplateId: '2Nm_ScInWj7jqR06WWwGBA309tLTfYZmrjjUg_W42iM',
       // 新历生日, 仅用作获取星座运势, 格式必须为MM-DD
-      horoscopeDate: '02-18',
+      horoscopeDate: '04-19',
     },
   ],
 
@@ -43,4 +43,3 @@ const USER_CONFIG = {
 }
 
 module.exports = USER_CONFIG
-
